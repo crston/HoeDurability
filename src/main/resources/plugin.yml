@@ -1,0 +1,7 @@
+name: HoeDurability
+version: '1.0-SNAPSHOT'
+main: com.gmail.bobason01.HoeDurability
+api-version: '1.20'
+load: STARTUP
+authors: [ crston ]
+description: You can't avoid losing your durability either, Hoe. Ha Ha

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HoeDurability:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HoeDurability_jar</output-path>
+    <root id="archive" name="HoeDurability.jar">
+      <element id="module-output" name="HoeDurability" />
+    </root>
+  </artifact>
+</component>

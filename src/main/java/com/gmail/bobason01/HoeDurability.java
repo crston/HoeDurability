@@ -30,7 +30,13 @@ public final class HoeDurability extends JavaPlugin implements Listener {
     }
 
     private void damageTool(Player player, ItemStack tool, int damage) {
-        if (!(tool.getItemMeta() instanceof Damageable)) {
+        ItemMeta meta = tool.getItemMeta();
+        if (!(meta instanceof Damageable damageable)) {
+            return;
+        }
+
+        // Unbreakable 여부 확인
+        if (meta.isUnbreakable()) {
             return;
         }
 
@@ -43,10 +49,7 @@ public final class HoeDurability extends JavaPlugin implements Listener {
         }
 
         int finalDamage = damageEvent.getDamage();
-        ItemMeta meta = tool.getItemMeta();
-        if (meta instanceof Damageable damageable) {
-            damageable.setDamage(damageable.getDamage() + finalDamage);
-            tool.setItemMeta(meta);
-        }
+        damageable.setDamage(damageable.getDamage() + finalDamage);
+        tool.setItemMeta(meta);
     }
 }
